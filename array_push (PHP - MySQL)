@@ -1,0 +1,17 @@
+$select=" WRITE YOUR SELECT QUERY "; $queryResult= mysql_query($select);
+
+//DECLARE YOUR ARRAY WHERE YOU WILL KEEP YOUR RECORD SETS
+$data_array=array();
+
+//STORE ALL THE RECORD SETS IN THAT ARRAY 
+while ($row = mysql_fetch_array($queryResult, MYSQL_ASSOC)) 
+{
+    array_push($data_array,$row);
+}
+
+mysql_free_result($queryResult);
+
+//TEST TO SEE THE RESULT OF THE ARRAY 
+echo '<pre>';
+print_r($data_array);
+echo '</pre>';
